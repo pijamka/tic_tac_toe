@@ -46,9 +46,8 @@ class Board:
         return False
     
     def save_results(self, current_player):
-        file = open('result.txt', 'a', encoding='utf-8')
-        file.write(current_player + '\n')
-        file.close()
+        with open('result.txt', 'a', encoding='utf-8') as f:
+            f.write(current_player + '\n')
 
     def __str__(self):
         return (
